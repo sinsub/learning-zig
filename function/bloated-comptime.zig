@@ -6,7 +6,7 @@ const std = @import("std");
 // - Beware. A few lines can generate a lot of code!
 
 // Verification:
-// $ zig build-exe function/bloated-comptime.zig
+// $ zig build-obj function/bloated-comptime.zig
 //
 // $ nm -a bloated-comptime.o | grep fib
 // 000000000009dc60 t bloated-comptime.fib__anon_23921
@@ -23,5 +23,5 @@ fn fib(comptime n: u32) u32 {
 }
 
 pub fn main() !void {
-    std.debug.print("fib(10): {}\n", .{fib(1000)});
+    std.debug.print("fib(1000): {}\n", .{fib(1000)});
 }
